@@ -97,7 +97,7 @@ BasicGame.Game.prototype = {
           this.game.physics.arcade.overlap(this.crosshair, this.asteroids, collisionHandler, null, this);
           this.ammo--;
         }
-        else if (this.game.time.now > this.nextFire && ammo == 0)
+        else if (this.game.time.now > this.nextFire && this.ammo == 0)
         {
           this.nextFire = this.game.time.now + this.fireRate;
           this.empty.play();
@@ -106,7 +106,7 @@ BasicGame.Game.prototype = {
       if (this.rKey.isDown && this.game.time.now > this.nextFire)
       {
         this.reload.play();
-        ammo = 6;
+        this.ammo = 6;
         this.nextFire = this.game.time.now + 1500;
       }
     },
