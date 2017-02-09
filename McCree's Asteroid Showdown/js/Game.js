@@ -41,12 +41,20 @@ BasicGame.Game = function (game) {
 
 function fireBullet()
 {
+<<<<<<< HEAD
   if (ammo > 0)
+=======
+  if (ammo > 0 && this.game.time.time > nextFire)
+>>>>>>> origin/master
   {
     if (checkOverlap(this.crosshair, this.asteroid))
     {
       asteroid.kill();
     }
+<<<<<<< HEAD
+=======
+    nextFire = this.game.time.time + fireRate;
+>>>>>>> origin/master
     ammo--;
     console.log(ammo);
   }
