@@ -31,7 +31,7 @@ BasicGame.MainMenu.prototype = {
 		this.mccree.anchor.setTo(0.5);
 	},
 
-	function playSound()
+	playSound: function()
 	{
 		this.selectMcCree = this.add.audio('selectMcCree');
 		this.selectMcCree.play();
