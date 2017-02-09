@@ -120,6 +120,7 @@ BasicGame.Game.prototype = {
         else if (this.game.time.now > this.nextFire && this.ammo == 0)
         {
           this.nextFire = this.game.time.now + this.fireRate;
+          this.ammoText = 'Press R to Reload';
           this.empty.play();
         }
       }
