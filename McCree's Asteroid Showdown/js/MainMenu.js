@@ -20,7 +20,7 @@ BasicGame.MainMenu.prototype = {
 		this.music.play();
 
 		this.add.sprite(0, 0, 'titlePage');
-		this.mccree_text = this.add.sprite(800, 700, 'mccree_text');
+		this.mccree_text = this.add.sprite(800, 730, 'mccree_text');
 		this.mccree_text.anchor.setTo(0.5);
 
 		this.mccree_select = this.add.button(800, 650, 'mccree_select', this.startGame, this, 'over', 'out', 'down');
