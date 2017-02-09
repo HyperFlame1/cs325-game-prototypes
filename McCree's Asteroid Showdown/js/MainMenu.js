@@ -20,7 +20,7 @@ BasicGame.MainMenu.prototype = {
 		this.music.play();
 
 		this.add.sprite(0, 0, 'titlePage');
-		this.mccree_text = this.add.sprite(800, 740, 'mccree_text');
+		this.mccree_text = this.add.sprite(800, 700, 'mccree_text');
 		this.mccree_text.anchor.setTo(0.5);
 
 		this.mccree_select = this.add.button(800, 650, 'mccree_select', this.startGame, this, 'over', 'out', 'down');
@@ -35,9 +35,11 @@ BasicGame.MainMenu.prototype = {
 		if (this.mccree_select.input.pointerOver())
 		{
 			this.mccree.alpha = 1;
+			this.mccree_text = 1;
 		}
 		else
 		{
+			this.mccree.alpha = 0.6;
 			this.mccree.alpha = 0.6;
 		}
 
