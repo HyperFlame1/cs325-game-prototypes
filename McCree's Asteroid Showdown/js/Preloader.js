@@ -27,9 +27,10 @@ BasicGame.Preloader.prototype = {
     this.load.atlas('mccree_select', 'assets/mccree_select.png', 'assets/mccree_select.json', Phaser.Loader.TEXTURE_ATLAS_JASON_ARRAY);
     this.load.image('mccree_text', 'assets/mccree_text.png');
     this.load.image('mccree', 'assets/mccree.png');
-		this.load.image('cursor', 'assets/cursor.png');
+		this.load.image('crosshair', 'assets/cursor.png');
     this.load.audio('selectMcCree', 'assets/mccree_select.mp3');
 		this.load.audio('titleMusic', ['assets/Overwatch - Rally The Heroes.mp3']);
+		this.load.audio('gameMusic', ['assets/Overtime.mp3'])
 		//	+ lots of other required assets here
     this.load.image( 'logo', 'assets/phaser.png' );
 

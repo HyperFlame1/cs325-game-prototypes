@@ -24,19 +24,21 @@ BasicGame.Game = function (game) {
     //  But do consider them as being 'reserved words', i.e. don't create a property for your own game called "world" or you'll over-write the world reference.
 
     // Create your own variables.
+    this.music = null;
     this.mccree = null;
     this.earth = null;
     this.asteroid = null;
-    this.cursor = null;
+    this.crosshair = null;
 };
 
 BasicGame.Game.prototype = {
 
     create: function () {
-
-      this.game.canvas.addEventListener('mousedown', function() { game.input.mouse.requestPointerLock(); });
-      this.cursor = this.add.sprite(this.game.input.mousePointer.x, this.game.input.mousePointer.y, 'cursor.png');
-      this.cursor.anchor.setTo(0.5);
+      this.music.add.audio('gameMusic');
+      this.music.play();
+      this.game.canvas.addEventListener('mousedown', function() { BasicGame.game.input.mouse.requestPointerLock(); });
+      this.crosshair = this.add.sprite(this.game.input.mousePointer.x, this.game.input.mousePointer.y, 'cursor.png');
+      this.crosshair.anchor.setTo(0.5);
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
