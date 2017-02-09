@@ -29,7 +29,7 @@ BasicGame.Game = function (game) {
     this.gunshot = null;
     this.mccree = null;
     this.earth = null;
-    this.asteroid = null;
+    this.asteroids = null;
     this.crosshair = null;
     this.defendText = null;
     this.asteroid = null;
@@ -41,12 +41,12 @@ BasicGame.Game = function (game) {
 
 function fireBullet()
 {
-  if (ammo > 0 && this.game.time.now > nextFire)
+  if (ammo > 0)
   {
     if (checkOverlap(this.crosshair, this.asteroid))
     {
+      asteroid.kill();
     }
-    nextFire = game.time.now + fireRate;
     ammo--;
     console.log(ammo);
   }
@@ -72,8 +72,9 @@ BasicGame.Game.prototype = {
       this.earth.anchor.setTo(0.5);
       this.earth.scale.setTo(0.8);
       this.game.input.mouse.capture = true;
-      ammo = 6;
-      asteroids = this.game.add.group();
+      this.asteroids = this.game.add.group();
+      this.asteroids.enableBody = true;
+      this.asteroids.physicsBodyType = Phaser.PHysics.ARCADE;
     },
 
     update: function () {
