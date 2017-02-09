@@ -34,24 +34,28 @@ BasicGame.Game = function (game) {
     this.defendText = null;
     this.asteroid = null;
     var ammo = null;
+    var nextFire = 0;
+    var fireRate = 800;
     var randomNumber = null;
 };
 
 function fireBullet()
 {
-  if (ammo > 0)
+  if (ammo > 0 && this.game.time.now > nextFire)
   {
     if (checkOverlap(this.crosshair, this.asteroid))
     {
-      ammo--;
-      console.log(ammo);
     }
+    nextFire = game.time.now + fireRate;
+    ammo--;
+    console.log(ammo);
   }
 };
 
 BasicGame.Game.prototype = {
 
     create: function () {
+      this.game.physics.startSystem(Phaser.Physics.ARCADE);
       this.music = this.add.audio('gameMusic');
       this.music.loopFull();
       this.background = this.add.sprite(0, 0, 'titlePage');
@@ -82,7 +86,7 @@ BasicGame.Game.prototype = {
       }
       this.crosshair.x = this.game.input.x;
       this.crosshair.y = this.game.input.y;
-      if (game.input.activePointer.isDown)
+      if (this.game.input.pointer.isDown)
       {
         fireBullet();
       }
