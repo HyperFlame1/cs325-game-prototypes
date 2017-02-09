@@ -37,7 +37,7 @@ BasicGame.Game = function (game) {
     this.ammo = null;
     this.score = null;
     this.nextFire = 0;
-    this.fireRate = 800;
+    this.fireRate = 500;
     this.rKey = null;
 };
 
@@ -68,6 +68,7 @@ BasicGame.Game.prototype = {
       this.earth = this.add.sprite(200, 450, 'earth');
       this.earth.anchor.setTo(0.5);
       this.earth.scale.setTo(0.8);
+      this.game.physics.arcade.enableBody(this.earth);
       this.game.input.mouse.capture = true;
       this.asteroids = this.game.add.group();
       this.asteroids.enableBody = true;
@@ -89,6 +90,7 @@ BasicGame.Game.prototype = {
       }
       this.crosshair.x = this.game.input.x;
       this.crosshair.y = this.game.input.y;
+      asteroids.rotation += 0.03;
       if (this.game.input.activePointer.isDown)
       {
         if(this.game.time.now > this.nextFire && this.ammo > 0)
@@ -96,6 +98,7 @@ BasicGame.Game.prototype = {
           this.nextFire = this.game.time.now + this.fireRate;
           this.game.physics.arcade.overlap(this.crosshair, this.asteroids, collisionHandler, null, this);
           this.ammo--;
+          this.gunshot.play();
         }
         else if (this.game.time.now > this.nextFire && this.ammo == 0)
         {
@@ -105,9 +108,9 @@ BasicGame.Game.prototype = {
       }
       if (this.rKey.isDown && this.game.time.now > this.nextFire)
       {
-        this.reload.play();
         this.ammo = 6;
         this.nextFire = this.game.time.now + 1500;
+        this.reload.play();
       }
     },
 
