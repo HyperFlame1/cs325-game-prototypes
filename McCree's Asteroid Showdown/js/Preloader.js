@@ -12,7 +12,7 @@ BasicGame.Preloader.prototype = {
 
 	preload: function () {
 
-		this.preloadBar = this.add.sprite(BasicGame.world.centerX, BasicGame.world.centerY, 'preloaderBar');
+		this.preloadBar = this.add.sprite(600, 400, 'preloaderBar');
     this.loadingText = this.add.sprite(800, 400, 'loadingText');
 
 		//	This sets the preloadBar sprite as a loader sprite.
