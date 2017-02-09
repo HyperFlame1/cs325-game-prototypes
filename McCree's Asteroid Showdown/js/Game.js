@@ -29,10 +29,10 @@ BasicGame.Game = function (game) {
     this.gunshot = null;
     this.mccree = null;
     this.earth = null;
+    this.asteroid = null;
     this.asteroids = null;
     this.crosshair = null;
     this.defendText = null;
-    this.asteroid = null;
     var ammo = null;
     var nextFire = 0;
     var fireRate = 800;
@@ -81,7 +81,7 @@ BasicGame.Game.prototype = {
       var randomNumber = Math.floor(Math.random() * 100);
       if (randomNumber > 98)
       {
-        this.asteroid = this.asteroids.create(800, Math.random() * 800, 'asteroid');
+        this.asteroids.create(800, Math.random() * 800, 'asteroid');
         this.asteroid.anchor.set(0.5);
         this.game.physics.arcade.moveToObject(this.asteroid, this.earth, 150);
       }
