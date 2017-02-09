@@ -90,7 +90,10 @@ BasicGame.Game.prototype = {
       }
       this.crosshair.x = this.game.input.x;
       this.crosshair.y = this.game.input.y;
-      this.asteroids.rotation += 0.03;
+      for (var i = 0; i < this.asteroids.children.length; i++)
+      {
+        this.asteroids.children[i].rotation += 0.03;
+      }
       if (this.game.input.activePointer.isDown)
       {
         if(this.game.time.now > this.nextFire && this.ammo > 0)
