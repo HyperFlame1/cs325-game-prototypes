@@ -25,10 +25,12 @@ BasicGame.Game = function (game) {
 
     // Create your own variables.
     this.music = null;
+    this.background = null;
     this.mccree = null;
     this.earth = null;
     this.asteroid = null;
     this.crosshair = null;
+    this.defendText = null;
 };
 
 BasicGame.Game.prototype = {
@@ -36,14 +38,14 @@ BasicGame.Game.prototype = {
     create: function () {
       this.music = this.add.audio('gameMusic');
       this.music.loopFull();
+      this.background = this.add.sprite(0, 0, 'titlePage');
       this.crosshair = this.add.sprite(this.game.input.mousePointer.x, this.game.input.mousePointer.y, 'crosshair'); //this.game.input.mousePointer.x, this.game.input.mousePointer.y,
       this.crosshair.anchor.setTo(0.5);
-        // Add some text using a CSS style.
-        // Center it in X, and position its top 15 pixels from the top of the world.
-        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = this.game.add.text( this.game.world.centerX, 15, "Build something amazing.", style );
-        text.anchor.setTo( 0.5, 0.0 );
-
+      this.defendText = this.add.sprite(800, 50, 'defendText');
+      this.defendText.anchor.setTo(0.5);
+      this.game.add.tween(defendText).to({alpha: 0}, 3000, true, 2000)
+      this.mccree = this.add.sprite(150, 416, 'mccree');
+      this.mccree.scale.setTo(0.5);
     },
 
     update: function () {
@@ -51,14 +53,7 @@ BasicGame.Game.prototype = {
       this.crosshair.x = this.game.input.x;
       this.crosshair.y = this.game.input.y;
 
-        //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-
-        // Accelerate the 'logo' sprite towards the cursor,
-        // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
-        // in X or Y.
-        // This function returns the rotation angle that makes it visually match its
-        // new trajectory.
-        //this.bouncy.rotation = this.game.physics.arcade.accelerateToPointer( this.bouncy, this.game.input.activePointer, 500, 500, 500 );
+      //this.bouncy.rotation = this.game.physics.arcade.accelerateToPointer( this.bouncy, this.game.input.activePointer, 500, 500, 500 );
     },
 
     quitGame: function (pointer) {
