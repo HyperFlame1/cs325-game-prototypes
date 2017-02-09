@@ -35,9 +35,9 @@ BasicGame.Game.prototype = {
 
     create: function () {
       this.music = this.add.audio('gameMusic');
-      this.music.play();
+      this.music.loopFull();
       this.game.canvas.addEventListener('mousedown', function() { BasicGame.game.input.mouse.requestPointerLock(); });
-      this.crosshair = this.add.sprite(this.game.input.mousePointer.x, this.game.input.mousePointer.y, 'cursor'); //this.game.input.mousePointer.x, this.game.input.mousePointer.y,
+      this.crosshair = this.add.sprite(this.game.input.mousePointer.x, this.game.input.mousePointer.y, 'crosshair'); //this.game.input.mousePointer.x, this.game.input.mousePointer.y,
       this.crosshair.anchor.setTo(0.5);
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
