@@ -86,7 +86,7 @@ BasicGame.Game.prototype = {
       }
       this.crosshair.x = this.game.input.x;
       this.crosshair.y = this.game.input.y;
-      if (this.game.input.pointer.isDown)
+      if (this.game.input.activePointer.isDown)
       {
         fireBullet();
       }
