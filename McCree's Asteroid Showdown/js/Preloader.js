@@ -12,7 +12,7 @@ BasicGame.Preloader.prototype = {
 
 	preload: function () {
 
-		this.preloadBar = this.add.sprite(800, 400, 'preloaderBar');
+		this.preloadBar = this.add.sprite(BasicGame.world.centerX, BasicGame.world.centerY, 'preloaderBar');
     this.loadingText = this.add.sprite(800, 400, 'loadingText');
 
 		//	This sets the preloadBar sprite as a loader sprite.
@@ -23,6 +23,7 @@ BasicGame.Preloader.prototype = {
 		//	Here we load the rest of the assets our game needs.
 		this.load.image('titlePage', 'assets/title.png');
     this.load.atlas('mccree_select', 'assets/mccree_select.png', 'assets/mccree_select.json', Phaser.Loader.TEXTURE_ATLAS_JASON_ARRAY)
+    this.load.image('mccree_text', 'assets/mccree_text.png')
     this.load.image('mccree', 'assets/mccree.png');
     this.load.audio('selectMcCree', 'assets/mccree_select.mp3');
 		this.load.audio('titleMusic', ['assets/Overwatch - Rally The Heroes.mp3']);
