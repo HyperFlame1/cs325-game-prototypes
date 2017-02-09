@@ -36,7 +36,8 @@ BasicGame.Game = function (game) {
     this.crosshair = null;
     this.defendText = null;
     this.ammo = null;
-    this.score = 0;
+    this.ammoText = null;
+    this.score = null;
     this.scoreText = null;
     this.nextFire = 0;
     this.fireRate = 500;
@@ -88,7 +89,8 @@ BasicGame.Game.prototype = {
       this.reload = this.add.audio('reload');
       this.losing = this.add.audio('losing');
       this.rKey = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
-      this.scoreText = game.add.text(200, 200, 'Score: 0', { fontSize: '32px', fill: '#FFF'});
+      this.scoreText = this.game.add.text(50, 50, 'Score: 0', { fontSize: '32px', fill: '#FFF'});
+      this.ammoText = this.game.add.text(700, 50, 'Ammo: 6', { fontSize: '32px', fill: '#FFF'});
     },
 
     update: function () {
@@ -112,6 +114,7 @@ BasicGame.Game.prototype = {
           this.nextFire = this.game.time.now + this.fireRate;
           this.game.physics.arcade.overlap(this.crosshair, this.asteroids, collisionHandler, null, this);
           this.ammo--;
+          this.ammoText = 'Ammo: ' + this.ammo;
           this.gunshot.play();
         }
         else if (this.game.time.now > this.nextFire && this.ammo == 0)
@@ -123,6 +126,7 @@ BasicGame.Game.prototype = {
       if (this.rKey.isDown && this.game.time.now > this.nextFire)
       {
         this.ammo = 6;
+        this.ammoText = 'Ammo: ' + 6;
         this.nextFire = this.game.time.now + 1500;
         this.reload.play();
       }

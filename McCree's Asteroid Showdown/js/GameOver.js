@@ -7,6 +7,7 @@ BasicGame.GameOver = function (game) {
 BasicGame.GameOver.prototype = {
   create: function () {
     this.music = this.add.audio('gameOver');
+    this.music.play();
     this.gameOverScreen = this.add.sprite(0, 0, 'gameOverScreen');
     this.spacebar = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
   },
