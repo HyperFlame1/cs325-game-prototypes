@@ -38,13 +38,8 @@ BasicGame.Game = function (game) {
 
 function fireBullet()
 {
-  if (this.ammo > 0)
-  {
-    this.game.physics.arcade.overlap(this.crosshair, this.asteroids, collisionHandler, null, this);
-    this.ammo--;
-    console.log(this.ammo);
-    console.log(this.score);
-  }
+  this.game.physics.arcade.overlap(this.crosshair, this.asteroids, collisionHandler, null, this);
+  this.ammo--;
 };
 
 function collisionHandler (crosshair, asteroid)
@@ -85,11 +80,12 @@ BasicGame.Game.prototype = {
       var randomNumber = Math.floor(Math.random() * 100);
       if (randomNumber > 98)
       {
-        var asteroid = this.asteroids.create(800, Math.random() * 800, 'asteroid');
+        var asteroid = this.asteroids.create(1600, Math.random() * 800, 'asteroid');
         this.game.physics.arcade.moveToObject(asteroid, this.earth, 150);
       }
       this.crosshair.x = this.game.input.x;
       this.crosshair.y = this.game.input.y;
+      this.crosshair.BringToTop();
       if (this.game.input.activePointer.isDown)
       {
         fireBullet();
