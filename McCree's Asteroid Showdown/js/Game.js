@@ -82,6 +82,7 @@ BasicGame.Game.prototype = {
       this.crosshair.y = this.game.input.y;
       if (this.game.input.activePointer.isDown)
       {
+        console.log('test');
         this.game.physics.arcade.overlap(this.crosshair, this.asteroids, collisionHandler, null, this);
       }
     },
