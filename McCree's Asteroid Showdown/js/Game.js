@@ -48,7 +48,7 @@ function collisionHandler (crosshair, asteroid)
 {
   asteroid.kill();
   this.score += 1;
-  this.scoreText = 'Score: ' + score;
+  this.scoreText = 'Score: ' + this.score;
 };
 
 function gameEnd() {
@@ -90,7 +90,7 @@ BasicGame.Game.prototype = {
       this.losing = this.add.audio('losing');
       this.rKey = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
       this.scoreText = this.game.add.text(50, 50, 'Score: 0', { fontSize: '32px', fill: '#FFF'});
-      this.ammoText = this.game.add.text(700, 50, 'Ammo: 6', { fontSize: '32px', fill: '#FFF'});
+      this.ammoText = this.game.add.text(50, 700, 'Ammo: 6', { fontSize: '32px', fill: '#FFF'});
     },
 
     update: function () {
