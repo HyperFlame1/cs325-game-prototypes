@@ -35,7 +35,7 @@ BasicGame.Game.prototype = {
     create: function () {
 
       this.game.canvas.addEventListener('mousedown', function() { this.game.input.mouse.requestPointerLock(); });
-      this.cursor = this.add.sprite(game.input.x, game.input.y, 'cursor.png');
+      this.cursor = this.add.sprite(this.game.input.mousePointer.x, this.game.input.mousePointer.y, 'cursor.png');
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
