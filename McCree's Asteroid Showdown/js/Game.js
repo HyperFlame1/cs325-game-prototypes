@@ -68,7 +68,7 @@ BasicGame.Game.prototype = {
       this.earth.scale.setTo(0.8);
       this.game.input.mouse.capture = true;
       ammo = 6;
-      asteroids = game.add.group();
+      asteroids = this.game.add.group();
     },
 
     update: function () {
