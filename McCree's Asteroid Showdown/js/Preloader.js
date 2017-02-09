@@ -3,6 +3,7 @@ BasicGame.Preloader = function (game) {
 
 	this.preloadBar = null;
 	this.loadingText = null;
+  this.loadingBackground = null;
 
 	this.ready = false;
 
@@ -14,8 +15,8 @@ BasicGame.Preloader.prototype = {
 
 		//	These are the assets we loaded in Boot.js
 		//	A nice sparkly background and a loading progress bar
-		this.preloadBar = this.add.sprite(400, 400, 'preloaderBar');
-		this.loadingText = this.add.sprite(400, 400, 'loadingText');
+    this.loadingText = this.add.sprite(800, 400, 'loadingText');
+		this.preloadBar = this.add.sprite(800, 400, 'preloaderBar');
 
 		//	This sets the preloadBar sprite as a loader sprite.
 		//	What that does is automatically crop the sprite from 0 to full-width
@@ -23,12 +24,16 @@ BasicGame.Preloader.prototype = {
 		this.load.setPreloadSprite(this.preloadBar);
 
 		//	Here we load the rest of the assets our game needs.
-		//	As this is just a Project Template I've not provided these assets, swap them for your own.
-		this.load.image('titlePage', 'assets/title.jpg');
-		this.load.atlas('playButton', 'assets/play_button.png', 'assets/play_button.json');
-		this.load.audio('titleMusic', ['assets/Poppers and Prosecco.mp3']);
+		this.load.image('titlePage', 'assets/title.png');
+		this.load.image('over', 'assets/over.png');
+    this.load.image('out', 'assets/out.png');
+    this.load.image('down', 'assets/down.png');
+    this.load.image('mccree', 'assets/mccree.png');
+    this.load.audio('selectMcCree', 'assets/mccree_select.mp3');
+		this.load.audio('titleMusic', ['assets/Overwatch - Rally The Heroes.mp3']);
 		//	+ lots of other required assets here
-        this.load.image( 'logo', 'assets/phaser.png' );
+    this.load.image( 'logo', 'assets/phaser.png' );
+
 	},
 
 	create: function () {
