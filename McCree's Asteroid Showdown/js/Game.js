@@ -34,6 +34,8 @@ BasicGame.Game = function (game) {
     this.defendText = null;
     this.ammo = null;
     this.score = null;
+    this.nextFire = 0;
+    this.fireRate = 500;
 };
 
 function collisionHandler (crosshair, asteroid)
@@ -83,8 +85,11 @@ BasicGame.Game.prototype = {
       this.crosshair.y = this.game.input.y;
       if (this.game.input.activePointer.isDown)
       {
-        console.log('test');
-        this.game.physics.arcade.overlap(this.crosshair, this.asteroids, collisionHandler, null, this);
+        if(this.game.time.now > this.nextFire)
+        {
+          this.nextFire = this.game.time.now + this.fireRate;
+          this.game.physics.arcade.overlap(this.crosshair, this.asteroids, collisionHandler, null, this);
+        }
       }
     },
 
