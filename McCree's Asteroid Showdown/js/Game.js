@@ -81,7 +81,7 @@ BasicGame.Game.prototype = {
       }
       this.crosshair.x = this.game.input.x;
       this.crosshair.y = this.game.input.y;
-      game.input.onDown.add(this.fireBullet, this);
+      this.game.input.onDown.add(this.fireBullet, this);
     },
 
     quitGame: function (pointer) {
