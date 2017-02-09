@@ -38,6 +38,7 @@ BasicGame.Game = function (game) {
 
 function collisionHandler (crosshair, asteroid)
 {
+  console.log('lul');
   asteroid.kill();
   this.score += 1;
 }
