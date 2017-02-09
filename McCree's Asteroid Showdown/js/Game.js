@@ -53,7 +53,7 @@ BasicGame.Game.prototype = {
       this.background = this.add.sprite(0, 0, 'titlePage');
       this.crosshair = this.add.sprite(this.game.input.mousePointer.x, this.game.input.mousePointer.y, 'crosshair'); //this.game.input.mousePointer.x, this.game.input.mousePointer.y,
       this.crosshair.anchor.setTo(0.5);
-      this.crosshair.enableBody = true;
+      this.game.physics.arcade.enableBody(this.crosshair);
       this.defendText = this.add.sprite(800, 50, 'defendText');
       this.defendText.anchor.setTo(0.5);
       this.defendText.scale.setTo(1.2);
