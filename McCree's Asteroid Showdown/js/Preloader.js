@@ -32,6 +32,9 @@ BasicGame.Preloader.prototype = {
 		this.load.image('earth', 'assets/earth.png');
 		this.load.image('asteroid', 'assets/asteroid.png');
     this.load.audio('selectMcCree', 'assets/mccree_select.mp3');
+		this.load.audio('gunshot', 'assets/gunshot.wav');
+		this.load.audio('empty', 'assets/empty.wav');
+		this.load.audio('reload', 'assets/reload.wav');
 		this.load.audio('titleMusic', ['assets/Overwatch - Rally The Heroes.mp3']);
 		this.load.audio('gameMusic', ['assets/Overtime.mp3']);
 	},

@@ -27,6 +27,8 @@ BasicGame.Game = function (game) {
     this.music = null;
     this.background = null;
     this.gunshot = null;
+    this.empty = null;
+    this.reload = null;
     this.mccree = null;
     this.earth = null;
     this.asteroids = null;
@@ -35,12 +37,12 @@ BasicGame.Game = function (game) {
     this.ammo = null;
     this.score = null;
     this.nextFire = 0;
-    this.fireRate = 500;
+    this.fireRate = 800;
+    this.rKey = null;
 };
 
 function collisionHandler (crosshair, asteroid)
 {
-  console.log('lul');
   asteroid.kill();
   this.score += 1;
 }
@@ -60,10 +62,10 @@ BasicGame.Game.prototype = {
       this.defendText.anchor.setTo(0.5);
       this.defendText.scale.setTo(1.2);
       this.game.add.tween(this.defendText).to({alpha: 0}, 3000, Phaser.Easing.Linear.None, true, 2000, 0, false);
-      this.mccree = this.add.sprite(200, 240, 'mccree');
+      this.mccree = this.add.sprite(200, 290, 'mccree');
       this.mccree.anchor.setTo(0.5, 1);
       this.mccree.scale.setTo(0.3);
-      this.earth = this.add.sprite(200, 400, 'earth');
+      this.earth = this.add.sprite(200, 450, 'earth');
       this.earth.anchor.setTo(0.5);
       this.earth.scale.setTo(0.8);
       this.game.input.mouse.capture = true;
@@ -72,6 +74,10 @@ BasicGame.Game.prototype = {
       this.asteroids.physicsBodyType = Phaser.Physics.ARCADE;
       this.ammo = 6;
       this.score = 0;
+      this.gunshot = this.add.audio('gunshot');
+      this.empty = this.add.audio('empty');
+      this.reload = this.add.audio('reload');
+      this.rKey = game.input.keyboard.addKey(Phaser.Keyboard.R);
     },
 
     update: function () {
@@ -85,11 +91,23 @@ BasicGame.Game.prototype = {
       this.crosshair.y = this.game.input.y;
       if (this.game.input.activePointer.isDown)
       {
-        if(this.game.time.now > this.nextFire)
+        if(this.game.time.now > this.nextFire && ammo > 0)
         {
           this.nextFire = this.game.time.now + this.fireRate;
           this.game.physics.arcade.overlap(this.crosshair, this.asteroids, collisionHandler, null, this);
+          this.ammo--;
         }
+        else if (this.game.time.now > this.nextFire && ammo == 0)
+        {
+          this.nextFire = this.game.time.now + this.fireRate;
+          this.empty.play();
+        }
+      }
+      if (this.rKey.isDown && this.game.time.now > this.nextFire)
+      {
+        this.reload.play();
+        ammo = 6;
+        this.nextFire = this.game.time.now + 1500;
       }
     },
 
