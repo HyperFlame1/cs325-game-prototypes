@@ -36,7 +36,6 @@ BasicGame.Game.prototype = {
     create: function () {
       this.music = this.add.audio('gameMusic');
       this.music.loopFull();
-      this.game.canvas.addEventListener('mousedown', function() { BasicGame.game.input.mouse.requestPointerLock(); });
       this.crosshair = this.add.sprite(this.game.input.mousePointer.x, this.game.input.mousePointer.y, 'crosshair'); //this.game.input.mousePointer.x, this.game.input.mousePointer.y,
       this.crosshair.anchor.setTo(0.5);
         // Add some text using a CSS style.
@@ -49,8 +48,8 @@ BasicGame.Game.prototype = {
 
     update: function () {
 
-      this.cursor.x = this.game.input.x;
-      this.cursor.y = this.game.input.y;
+      this.crosshair.x = this.game.input.x;
+      this.crosshair.y = this.game.input.y;
 
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 
