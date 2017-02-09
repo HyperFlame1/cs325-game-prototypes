@@ -22,7 +22,7 @@ BasicGame.Game = function (game) {
 
     //  You can use any of these from any function within this State.
     //  But do consider them as being 'reserved words', i.e. don't create a property for your own game called "world" or you'll over-write the world reference.
-    
+
     // Create your own variables.
     this.bouncy = null;
 };
@@ -32,24 +32,24 @@ BasicGame.Game.prototype = {
     create: function () {
 
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-        
+
         // Create a sprite at the center of the screen using the 'logo' image.
         this.bouncy = this.game.add.sprite( this.game.world.centerX, this.game.world.centerY, 'logo' );
         // Anchor the sprite at its center, as opposed to its top-left corner.
         // so it will be truly centered.
         this.bouncy.anchor.setTo( 0.5, 0.5 );
-        
+
         // Turn on the arcade physics engine for this sprite.
         this.game.physics.enable( this.bouncy, Phaser.Physics.ARCADE );
         // Make it bounce off of the world bounds.
         this.bouncy.body.collideWorldBounds = true;
-        
+
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
         var text = this.game.add.text( this.game.world.centerX, 15, "Build something amazing.", style );
         text.anchor.setTo( 0.5, 0.0 );
-        
+
         // When you click on the sprite, you go back to the MainMenu.
         this.bouncy.inputEnabled = true;
         this.bouncy.events.onInputDown.add( function() { this.state.start('MainMenu'); }, this );
@@ -58,7 +58,7 @@ BasicGame.Game.prototype = {
     update: function () {
 
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-        
+
         // Accelerate the 'logo' sprite towards the cursor,
         // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
         // in X or Y.
