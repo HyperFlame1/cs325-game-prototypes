@@ -33,22 +33,19 @@ BasicGame.Game = function (game) {
     this.asteroids = null;
     this.crosshair = null;
     this.defendText = null;
-    var ammo = null;
-    var nextFire = 0;
-    var fireRate = 800;
-    var randomNumber = null;
+    this.ammo = null;
 };
 
 function fireBullet()
 {
-  if (ammo > 0)
+  if (this.ammo > 0)
   {
     if (checkOverlap(this.crosshair, this.asteroid))
     {
       asteroid.kill();
     }
-    ammo--;
-    console.log(ammo);
+    this.ammo--;
+    console.log(this.ammo);
   }
 };
 
@@ -75,6 +72,7 @@ BasicGame.Game.prototype = {
       this.asteroids = this.game.add.group();
       this.asteroids.enableBody = true;
       this.asteroids.physicsBodyType = Phaser.Physics.ARCADE;
+      this.ammo = 6;
     },
 
     update: function () {
