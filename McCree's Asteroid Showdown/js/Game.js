@@ -77,7 +77,7 @@ BasicGame.Game.prototype = {
       this.gunshot = this.add.audio('gunshot');
       this.empty = this.add.audio('empty');
       this.reload = this.add.audio('reload');
-      this.rKey = game.input.keyboard.addKey(Phaser.Keyboard.R);
+      this.rKey = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
     },
 
     update: function () {
