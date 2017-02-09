@@ -1,7 +1,7 @@
 {"frames": [
 
 {
-	"filename": "down.png",
+	"filename": "down",
 	"frame": {"x":0,"y":0,"w":100,"h":100},
 	"rotated": false,
 	"trimmed": false,
@@ -9,7 +9,7 @@
 	"sourceSize": {"w":100,"h":100}
 },
 {
-	"filename": "out.png",
+	"filename": "out",
 	"frame": {"x":100,"y":0,"w":100,"h":100},
 	"rotated": false,
 	"trimmed": false,
@@ -17,7 +17,7 @@
 	"sourceSize": {"w":100,"h":100}
 },
 {
-	"filename": "over.png",
+	"filename": "over",
 	"frame": {"x":200,"y":0,"w":100,"h":100},
 	"rotated": false,
 	"trimmed": false,
@@ -31,6 +31,6 @@
 	"format": "RGBA8888",
 	"size": {"w":300,"h":100},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:73a596ce6bb7f1449501a1b074795e7b:089dd8db9b488288f9c42ae31f3280af:2c70b986a4bd52584e4094ed5ab7b9d5$"
+	"smartupdate": "$TexturePacker:SmartUpdate:fd209863e443e01c2d78536b70c0c9f2:089dd8db9b488288f9c42ae31f3280af:2c70b986a4bd52584e4094ed5ab7b9d5$"
 }
 }

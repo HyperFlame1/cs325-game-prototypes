@@ -19,7 +19,7 @@ BasicGame.MainMenu.prototype = {
 
 		this.add.sprite(0, 0, 'titlePage');
 
-		this.mccree_select = this.add.button(800, 650, 'mccree_select', this.startGame, this, 'over.png', 'out.png', 'down.png');
+		this.mccree_select = this.add.button(800, 650, 'mccree_select', this.startGame, this, 'over', 'out', 'down');
 
 	},
 
