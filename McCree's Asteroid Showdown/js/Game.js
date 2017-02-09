@@ -26,6 +26,7 @@ BasicGame.Game = function (game) {
     // Create your own variables.
     this.music = null;
     this.background = null;
+    this.gunshot = null;
     this.mccree = null;
     this.earth = null;
     this.asteroid = null;
@@ -44,15 +45,17 @@ BasicGame.Game.prototype = {
       this.defendText = this.add.sprite(800, 50, 'defendText');
       this.defendText.anchor.setTo(0.5);
       this.game.add.tween(this.defendText).to({alpha: 0}, 3000, Phaser.Easing.Linear.None, true, 2000, 0, false);
-      this.mccree = this.add.sprite(150, 416, 'mccree');
-      this.mccree.scale.setTo(0.5);
+      this.mccree = this.add.sprite(150, 200, 'mccree');
+      this.mccree.anchor.setTo(0.5);
+      this.mccree.scale.setTo(0.1);
+      this.earth = this.add.sprite(150, 315, 'earth');
+      this.earth.anchor.setTo(0.5);
     },
 
     update: function () {
 
       this.crosshair.x = this.game.input.x;
       this.crosshair.y = this.game.input.y;
-
       //this.bouncy.rotation = this.game.physics.arcade.accelerateToPointer( this.bouncy, this.game.input.activePointer, 500, 500, 500 );
     },
 
