@@ -25,11 +25,17 @@ BasicGame.MainMenu.prototype = {
 
 		this.mccree_select = this.add.button(800, 650, 'mccree_select', this.startGame, this, 'over', 'out', 'down');
 		this.mccree_select.anchor.setTo(0.5);
-		this.mccree_select.onInputDown.add(function(){this.selectMcCree.play();});
+		this.mccree_select.onInputDown.add(playSound, this);
 
 		this.mccree = this.add.sprite(800, 400, 'mccree');
 		this.mccree.anchor.setTo(0.5);
 	},
+
+	function playSound()
+	{
+		this.selectMcCree = this.add.audio('selectMcCree');
+		this.selectMcCree.play();
+	}
 
 	update: function () {
 
@@ -39,7 +45,7 @@ BasicGame.MainMenu.prototype = {
 		}
 		else
 		{
-			this.mccree.alpha = 0.8;
+			this.mccree.alpha = 0.6;
 		}
 
 	},
