@@ -49,13 +49,13 @@ function collisionHandler (crosshair, asteroid)
   var text = "Score: " + this.score.toString();
   var style = { font: "25px Verdana", align: "center"};
   var t = this.game.add.text(200, 200, text, style);
-}
+};
 
 function gameEnd() {
   this.music.stop();
   this.losing.play();
   this.state.start('GameOver');
-}
+};
 
 BasicGame.Game.prototype = {
 
