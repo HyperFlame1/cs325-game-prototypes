@@ -120,11 +120,10 @@ BasicGame.Game.prototype = {
         else if (this.game.time.now > this.nextFire && this.ammo == 0)
         {
           this.nextFire = this.game.time.now + this.fireRate;
-          this.ammoText.text = 'Press R to Reload';
           this.empty.play();
         }
       }
-      if (this.rKey.isDown && this.game.time.now > this.nextFire && this.ammo != 6)
+      if (this.ammo != 6 && this.rKey.isDown && this.game.time.now > this.nextFire)
       {
         this.ammo = 6;
         this.ammoText.text = 'Ammo: ' + 6;
