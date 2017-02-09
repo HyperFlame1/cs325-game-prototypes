@@ -25,16 +25,9 @@ BasicGame.MainMenu.prototype = {
 
 		this.mccree_select = this.add.button(800, 650, 'mccree_select', this.startGame, this, 'over', 'out', 'down');
 		this.mccree_select.anchor.setTo(0.5);
-		this.mccree_select.onInputDown.add(playSound, this);
 
 		this.mccree = this.add.sprite(800, 400, 'mccree');
 		this.mccree.anchor.setTo(0.5);
-	},
-
-	playSound: function()
-	{
-		this.selectMcCree = this.add.audio('selectMcCree');
-		this.selectMcCree.play();
 	},
 
 	update: function () {
@@ -50,10 +43,18 @@ BasicGame.MainMenu.prototype = {
 
 	},
 
+	playSound: function()
+	{
+		this.selectMcCree = this.add.audio('selectMcCree');
+		this.selectMcCree.play();
+	},
+
 	startGame: function (pointer) {
 
 		//	Ok, the Play Button has been clicked or touched, so let's stop the music (otherwise it'll carry on playing)
 		this.music.stop();
+		this.selectMcCree = this.add.audio('selectMcCree');
+		this.selectMcCree.play();
 
 		//	And start the actual game
 		this.state.start('Game');
