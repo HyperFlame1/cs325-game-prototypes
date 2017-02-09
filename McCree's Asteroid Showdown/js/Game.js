@@ -51,6 +51,11 @@ function collisionHandler (crosshair, asteroid)
   var t = this.game.add.text(200, 200, text, style);
 }
 
+function gameEnd() {
+  this.music.stop();
+  this.losing.play();
+  this.state.start('GameOver');
+}
 
 BasicGame.Game.prototype = {
 
@@ -123,11 +128,4 @@ BasicGame.Game.prototype = {
       }
       this.game.physics.arcade.overlap(this.earth, this.asteroids, gameEnd, null, this);
     },
-
-    gameEnd: function (pointer) {
-      this.music.stop();
-      this.losing.play();
-      this.state.start('GameOver');
-    }
-
 };
