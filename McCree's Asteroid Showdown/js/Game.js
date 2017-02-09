@@ -37,10 +37,11 @@ BasicGame.Game = function (game) {
     var randomNumber = null;
 };
 
-function fireBullet(){
+function fireBullet()
+{
   if (ammo > 0)
   {
-    if (checkOverlap(this.crosshair, this.asteroid)
+    if (checkOverlap(this.crosshair, this.asteroid))
     {
       ammo--;
     }
