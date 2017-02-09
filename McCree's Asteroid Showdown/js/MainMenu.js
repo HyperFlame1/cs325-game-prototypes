@@ -2,7 +2,7 @@
 BasicGame.MainMenu = function (game) {
 
 	this.music = null;
-	this.playButton = null;
+	this.mccree_select = null;
 
 };
 
@@ -19,7 +19,7 @@ BasicGame.MainMenu.prototype = {
 
 		this.add.sprite(0, 0, 'titlePage');
 
-		this.playButton = this.add.button(800, 650, 'mccree_select', this.startGame, this, 'over', 'out', 'down');
+		this.mccree_select = this.add.button(800, 650, 'mccree_select', this.startGame, this, 'over.png', 'out.png', 'down.png');
 
 	},
 
