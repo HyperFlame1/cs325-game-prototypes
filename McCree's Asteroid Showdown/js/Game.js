@@ -29,6 +29,7 @@ BasicGame.Game = function (game) {
     this.gunshot = null;
     this.empty = null;
     this.reload = null;
+    this.losing = null;
     this.mccree = null;
     this.earth = null;
     this.asteroids = null;
@@ -45,6 +46,9 @@ function collisionHandler (crosshair, asteroid)
 {
   asteroid.kill();
   this.score += 1;
+  var text = "Score: " + this.score.toString();
+  var style = { font: "25px Verdana", align: "center"};
+  var t = this.game.add.text(200, 200, text, style);
 }
 
 
@@ -78,6 +82,7 @@ BasicGame.Game.prototype = {
       this.gunshot = this.add.audio('gunshot');
       this.empty = this.add.audio('empty');
       this.reload = this.add.audio('reload');
+      this.losing = this.add.audio('losing');
       this.rKey = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
     },
 
@@ -116,16 +121,13 @@ BasicGame.Game.prototype = {
         this.nextFire = this.game.time.now + 1500;
         this.reload.play();
       }
+      this.game.physics.arcade.overlap(this.earth, this.asteroids, gameEnd, null, this);
     },
 
-    quitGame: function (pointer) {
-
-        //  Here you should destroy anything you no longer need.
-        //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
-
-        //  Then let's go back to the main menu.
-        this.state.start('MainMenu');
-
+    gameEnd: function (pointer) {
+      this.music.stop();
+      this.losing.play();
+      this.state.start('GameOver');
     }
 
 };

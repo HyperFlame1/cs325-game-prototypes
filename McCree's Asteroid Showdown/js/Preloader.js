@@ -31,10 +31,13 @@ BasicGame.Preloader.prototype = {
 		this.load.image('defendText', 'assets/defendText.png');
 		this.load.image('earth', 'assets/earth.png');
 		this.load.image('asteroid', 'assets/asteroid.png');
+		this.load.image('gameOverScreen', 'assets/gameOverScreen.png');
     this.load.audio('selectMcCree', 'assets/mccree_select.mp3');
 		this.load.audio('gunshot', 'assets/gunshot.wav');
 		this.load.audio('empty', 'assets/empty.wav');
 		this.load.audio('reload', 'assets/reload.wav');
+		this.load.audio('losing', 'assets/losing.mp3');
+		this.load.audio('gameOver', 'assets/gameOver.wav');
 		this.load.audio('titleMusic', ['assets/Overwatch - Rally The Heroes.mp3']);
 		this.load.audio('gameMusic', ['assets/Overtime.mp3']);
 	},
