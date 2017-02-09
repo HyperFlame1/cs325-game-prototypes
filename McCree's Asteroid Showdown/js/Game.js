@@ -24,38 +24,30 @@ BasicGame.Game = function (game) {
     //  But do consider them as being 'reserved words', i.e. don't create a property for your own game called "world" or you'll over-write the world reference.
 
     // Create your own variables.
-    this.bouncy = null;
+    this.mccree = null;
+    this.earth = null;
+    this.asteroid = null;
+    this.cursor = null;
 };
 
 BasicGame.Game.prototype = {
 
     create: function () {
 
-        //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-
-        // Create a sprite at the center of the screen using the 'logo' image.
-        this.bouncy = this.game.add.sprite( this.game.world.centerX, this.game.world.centerY, 'logo' );
-        // Anchor the sprite at its center, as opposed to its top-left corner.
-        // so it will be truly centered.
-        this.bouncy.anchor.setTo( 0.5, 0.5 );
-
-        // Turn on the arcade physics engine for this sprite.
-        this.game.physics.enable( this.bouncy, Phaser.Physics.ARCADE );
-        // Make it bounce off of the world bounds.
-        this.bouncy.body.collideWorldBounds = true;
-
+      this.game.canvas.addEventListener('mousedown', function() { this.game.input.mouse.requestPointerLock(); });
+      this.cursor = this.add.sprite(game.input.x, game.input.y, 'cursor.png');
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
         var text = this.game.add.text( this.game.world.centerX, 15, "Build something amazing.", style );
         text.anchor.setTo( 0.5, 0.0 );
 
-        // When you click on the sprite, you go back to the MainMenu.
-        this.bouncy.inputEnabled = true;
-        this.bouncy.events.onInputDown.add( function() { this.state.start('MainMenu'); }, this );
     },
 
     update: function () {
+
+      this.cursor.x = game.input.x;
+      this.cursor.y = game.input.y;
 
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 
@@ -64,7 +56,7 @@ BasicGame.Game.prototype = {
         // in X or Y.
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
-        this.bouncy.rotation = this.game.physics.arcade.accelerateToPointer( this.bouncy, this.game.input.activePointer, 500, 500, 500 );
+        //this.bouncy.rotation = this.game.physics.arcade.accelerateToPointer( this.bouncy, this.game.input.activePointer, 500, 500, 500 );
     },
 
     quitGame: function (pointer) {
