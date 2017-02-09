@@ -86,6 +86,7 @@ BasicGame.Game.prototype = {
       if (randomNumber > 98)
       {
         var asteroid = this.asteroids.create(1600, Math.random() * 800, 'asteroid');
+        asteroid.anchor.setTo(0.5);
         this.game.physics.arcade.moveToObject(asteroid, this.earth, 150);
       }
       this.crosshair.x = this.game.input.x;
