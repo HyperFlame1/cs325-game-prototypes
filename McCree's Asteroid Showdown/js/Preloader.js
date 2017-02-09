@@ -13,10 +13,8 @@ BasicGame.Preloader.prototype = {
 
 	preload: function () {
 
-		//	These are the assets we loaded in Boot.js
-		//	A nice sparkly background and a loading progress bar
-    this.loadingText = this.add.sprite(800, 400, 'loadingText');
 		this.preloadBar = this.add.sprite(800, 400, 'preloaderBar');
+    this.loadingText = this.add.sprite(800, 400, 'loadingText');
 
 		//	This sets the preloadBar sprite as a loader sprite.
 		//	What that does is automatically crop the sprite from 0 to full-width
@@ -25,9 +23,7 @@ BasicGame.Preloader.prototype = {
 
 		//	Here we load the rest of the assets our game needs.
 		this.load.image('titlePage', 'assets/title.png');
-		this.load.image('over', 'assets/over.png');
-    this.load.image('out', 'assets/out.png');
-    this.load.image('down', 'assets/down.png');
+    this.load.atlas('mccree_select', 'assets/mccree_select.png', 'assets/mccree_select.json')
     this.load.image('mccree', 'assets/mccree.png');
     this.load.audio('selectMcCree', 'assets/mccree_select.mp3');
 		this.load.audio('titleMusic', ['assets/Overwatch - Rally The Heroes.mp3']);

@@ -1,0 +1,36 @@
+{"frames": [
+
+{
+	"filename": "down.png",
+	"frame": {"x":0,"y":0,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "out.png",
+	"frame": {"x":100,"y":0,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+{
+	"filename": "over.png",
+	"frame": {"x":200,"y":0,"w":100,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "mccree_select.png",
+	"format": "RGBA8888",
+	"size": {"w":300,"h":100},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:73a596ce6bb7f1449501a1b074795e7b:089dd8db9b488288f9c42ae31f3280af:2c70b986a4bd52584e4094ed5ab7b9d5$"
+}
+}
