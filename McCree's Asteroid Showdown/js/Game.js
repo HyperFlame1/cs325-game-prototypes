@@ -41,7 +41,7 @@ BasicGame.Game = function (game) {
 
 function fireBullet()
 {
-  if (ammo > 0 && this.game.time.now > nextFire)
+  if (ammo > 0 && game.time.now > nextFire)
   {
     if (checkOverlap(this.crosshair, this.asteroid))
     {
