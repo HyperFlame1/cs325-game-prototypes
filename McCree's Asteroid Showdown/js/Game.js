@@ -74,7 +74,7 @@ BasicGame.Game.prototype = {
       this.game.input.mouse.capture = true;
       this.asteroids = this.game.add.group();
       this.asteroids.enableBody = true;
-      this.asteroids.physicsBodyType = Phaser.PHysics.ARCADE;
+      this.asteroids.physicsBodyType = Phaser.Physics.ARCADE;
     },
 
     update: function () {
