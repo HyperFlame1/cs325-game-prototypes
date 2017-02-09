@@ -35,7 +35,7 @@ BasicGame.MainMenu.prototype = {
 	{
 		this.selectMcCree = this.add.audio('selectMcCree');
 		this.selectMcCree.play();
-	}
+	},
 
 	update: function () {
 
