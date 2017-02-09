@@ -46,8 +46,8 @@ BasicGame.Game.prototype = {
 
     update: function () {
 
-      this.cursor.x = game.input.x;
-      this.cursor.y = game.input.y;
+      this.cursor.x = this.game.input.x;
+      this.cursor.y = this.game.input.y;
 
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 
