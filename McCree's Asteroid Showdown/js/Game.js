@@ -32,6 +32,19 @@ BasicGame.Game = function (game) {
     this.asteroid = null;
     this.crosshair = null;
     this.defendText = null;
+    this.asteroid = null;
+    var ammo = null;
+    var randomNumber = null;
+};
+
+function fireBullet(){
+  if (ammo > 0)
+  {
+    if (checkOverlap(this.crosshair, this.asteroid)
+    {
+      ammo--;
+    }
+  }
 };
 
 BasicGame.Game.prototype = {
@@ -44,20 +57,30 @@ BasicGame.Game.prototype = {
       this.crosshair.anchor.setTo(0.5);
       this.defendText = this.add.sprite(800, 50, 'defendText');
       this.defendText.anchor.setTo(0.5);
+      this.defendText.scale.setTo(1.2);
       this.game.add.tween(this.defendText).to({alpha: 0}, 3000, Phaser.Easing.Linear.None, true, 2000, 0, false);
-      this.mccree = this.add.sprite(150, 240, 'mccree');
+      this.mccree = this.add.sprite(200, 240, 'mccree');
       this.mccree.anchor.setTo(0.5, 1);
       this.mccree.scale.setTo(0.3);
       this.earth = this.add.sprite(200, 400, 'earth');
       this.earth.anchor.setTo(0.5);
       this.earth.scale.setTo(0.8);
+      this.game.input.mouse.capture = true;
+      ammo = 6;
+      asteroids = game.add.group();
     },
 
     update: function () {
-
+      var randomNumber = Math.floor(Math.random() * 100);
+      if (randomNumber > 98)
+      {
+        this.asteroid = this.asteroids.create(800, Math.random() * 800, 'asteroid');
+        this.asteroid.anchor.set(0.5);
+        this.game.physics.arcade.moveToObject(this.asteroid, this.earth, 150);
+      }
       this.crosshair.x = this.game.input.x;
       this.crosshair.y = this.game.input.y;
-      //this.bouncy.rotation = this.game.physics.arcade.accelerateToPointer( this.bouncy, this.game.input.activePointer, 500, 500, 500 );
+      game.input.onDown.add(this.fireBullet, this);
     },
 
     quitGame: function (pointer) {
