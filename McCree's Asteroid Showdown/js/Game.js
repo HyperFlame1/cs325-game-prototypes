@@ -91,7 +91,7 @@ BasicGame.Game.prototype = {
       this.crosshair.y = this.game.input.y;
       if (this.game.input.activePointer.isDown)
       {
-        if(this.game.time.now > this.nextFire && ammo > 0)
+        if(this.game.time.now > this.nextFire && this.ammo > 0)
         {
           this.nextFire = this.game.time.now + this.fireRate;
           this.game.physics.arcade.overlap(this.crosshair, this.asteroids, collisionHandler, null, this);
