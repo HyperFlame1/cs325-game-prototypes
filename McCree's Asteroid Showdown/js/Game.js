@@ -48,7 +48,7 @@ function collisionHandler (crosshair, asteroid)
 {
   asteroid.kill();
   this.score += 1;
-  this.scoreText = 'Score: ' + this.score;
+  this.scoreText.text = 'Score: ' + this.score;
 };
 
 function gameEnd() {
@@ -89,8 +89,8 @@ BasicGame.Game.prototype = {
       this.reload = this.add.audio('reload');
       this.losing = this.add.audio('losing');
       this.rKey = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
-      this.scoreText = this.game.add.text(50, 50, 'Score: 0', { fontSize: '32px', fill: '#FFF'});
-      this.ammoText = this.game.add.text(50, 700, 'Ammo: 6', { fontSize: '32px', fill: '#FFF'});
+      this.scoreText = this.game.add.text(100, 50, 'Score: 0', { fontSize: '32px', fill: '#FFF'});
+      this.ammoText = this.game.add.text(100, 700, 'Ammo: 6', { fontSize: '32px', fill: '#FFF'});
     },
 
     update: function () {
@@ -114,7 +114,7 @@ BasicGame.Game.prototype = {
           this.nextFire = this.game.time.now + this.fireRate;
           this.game.physics.arcade.overlap(this.crosshair, this.asteroids, collisionHandler, null, this);
           this.ammo--;
-          this.ammoText = 'Ammo: ' + this.ammo;
+          this.ammoText.text = 'Ammo: ' + this.ammo;
           this.gunshot.play();
         }
         else if (this.game.time.now > this.nextFire && this.ammo == 0)
@@ -127,7 +127,7 @@ BasicGame.Game.prototype = {
       if (this.rKey.isDown && this.game.time.now > this.nextFire)
       {
         this.ammo = 6;
-        this.ammoText = 'Ammo: ' + 6;
+        this.ammoText.text = 'Ammo: ' + 6;
         this.nextFire = this.game.time.now + 1500;
         this.reload.play();
       }
