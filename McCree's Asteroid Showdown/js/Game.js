@@ -43,7 +43,7 @@ BasicGame.Game.prototype = {
       this.crosshair.anchor.setTo(0.5);
       this.defendText = this.add.sprite(800, 50, 'defendText');
       this.defendText.anchor.setTo(0.5);
-      this.game.add.tween(this.defendText).to({alpha: 0}, 3000, true, 2000)
+      this.game.add.tween(this.defendText).to({alpha: 0}, 3000, Phaser.Easing.Linear.None, true, 2000, 0, false);
       this.mccree = this.add.sprite(150, 416, 'mccree');
       this.mccree.scale.setTo(0.5);
     },
