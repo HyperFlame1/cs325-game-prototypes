@@ -73,8 +73,6 @@ BasicGame.MainMenu.prototype = {
 		this.mario.body.enable = true;
 		this.mario.body.velocity.x = 90;
 
-		//yourSprite.events.onAnimationComplete(startAnimationB, this);
-
 	},
 
 	update: function () {
