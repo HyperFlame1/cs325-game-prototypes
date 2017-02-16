@@ -24,8 +24,8 @@ BasicGame.Preloader.prototype = {
 
 		//	Here we load the rest of the assets our game needs.
 		this.load.image('title', 'assets/title.png');
-		this.load.atlas('mario_running', 'assets/mario_running.png', 'assets/mario_running.json', Phaser.Loader.TEXTURE_ATLAS_JASON_ARRAY);
-		this.load.atlas('playButton', 'assets/playButton.png', 'assets/playButton.json', Phaser.Loader.TEXTURE_ATLAS_JASON_ARRAY);
+		this.load.atlas('mario_running', 'assets/mario_running.png', 'assets/mario_running.json', Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
+		this.load.atlas('playButton', 'assets/playButton.png', 'assets/playButton.json', Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
 		this.load.image('standingGoombaRight', 'assets/standingGoombaRight.png');
 		this.load.image('standingGoombaLeft', 'assets/standingGoombaLeft.png');
 		this.load.image('ground', 'assets/ground.png');
