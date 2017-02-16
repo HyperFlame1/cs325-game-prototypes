@@ -7,18 +7,22 @@ BasicGame.MainMenu = function (game) {
 	this.goomba1 = null;
 	this.goomba2 = null;
 	this.mario = null;
+	this.jumpSound = null;
 	this.title = null;
 	this.jumped = false;
 	this.landed = false;
 };
 
+var stompSound = null;
+
 function stomp(mario, goomba)
 {
+	stompSound.play();
 	goomba.body.allowGravity = true;
 	goomba.body.velocity.x = 5;
 	goomba.body.velocity.y = 10;
 	goomba.body.angularVelocity = 70;
-	mario.body.velocity.y = -80;
+	mario.body.velocity.y = -140;
 	mario.animations.stop();
 	mario.animations.play('jumping');
 };
@@ -33,10 +37,12 @@ BasicGame.MainMenu.prototype = {
 
 	create: function () {
 		this.game.physics.startSystem(Phaser.Physics.ARCADE);
-		this.game.physics.arcade.gravity.y = 500;
+		this.game.physics.arcade.gravity.y = 800;
 
+		this.jumpSound = this.add.audio('jump');
+		stompSound = this.add.audio('stomp');
 		this.music = this.add.audio('titleMusic');
-		this.music.loopFull();
+		this.music.loopFull(0.6);
 
 		this.background = this.add.tileSprite(0, 0, 512, 512, 'background');
 		this.ground = this.add.tileSprite(0, 0, 512, 512, 'ground');
@@ -84,7 +90,8 @@ BasicGame.MainMenu.prototype = {
 		{
 			this.mario.animations.stop();
 			this.mario.animations.play('jumping');
-			this.mario.body.velocity.y = -250;
+			this.jumpSound.play();
+			this.mario.body.velocity.y = -370;
 			this.jumped = true;
 		}
 

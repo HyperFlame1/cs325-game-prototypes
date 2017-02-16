@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "running 1",
+	"frame": {"x":0,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+{
+	"filename": "running 2",
+	"frame": {"x":16,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "goomba_running.png",
+	"format": "RGBA8888",
+	"size": {"w":32,"h":16},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:76092ffa06b4b1ff4167c2635f7f19db:845e62c22cb6dcc724447d696be1bf2f:35a3e03145b850ea8121aa3d14dac3b3$"
+}
+}

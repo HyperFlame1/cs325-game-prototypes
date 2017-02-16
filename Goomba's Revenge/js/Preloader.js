@@ -25,13 +25,20 @@ BasicGame.Preloader.prototype = {
 		//	Here we load the rest of the assets our game needs.
 		this.load.image('title', 'assets/title.png');
 		this.load.atlas('mario_running', 'assets/mario_running.png', 'assets/mario_running.json', Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
+		this.load.atlas('goomba_running', 'assets/goomba_running.png', 'assets/goomba_running.json', Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
+		this.load.atlas('shell', 'assets/shell.png', 'assets/shell.json', Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
 		this.load.atlas('playButton', 'assets/playButton.png', 'assets/playButton.json', Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
 		this.load.image('standingGoombaRight', 'assets/standingGoombaRight.png');
 		this.load.image('standingGoombaLeft', 'assets/standingGoombaLeft.png');
 		this.load.image('ground', 'assets/ground.png');
 		this.load.image('background', 'assets/background.png');
+		this.load.audio('jump', 'assets/jump.wav');
+		this.load.audio('stomp', 'assets/stomp.wav');
+		this.load.audio('hurt', 'assets/hurt.wav');
 		this.load.audio('titleMusic', 'assets/titleMusic.wav');
-		this.load.audio('stageMusic', 'assets/stageMusic.mp3');
+		this.load.audio('stageMusic', 'assets/stageMusic.wav');
+		this.load.audio('gameOver', 'assets/gameOver.wav');
+		this.load.image('gameOverScreen', 'assets/gameOver.png');
 	},
 
 	create: function () {

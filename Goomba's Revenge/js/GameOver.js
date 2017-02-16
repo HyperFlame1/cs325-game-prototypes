@@ -16,7 +16,7 @@ BasicGame.GameOver.prototype = {
     if (this.spacebar.isDown)
     {
       this.music.stop();
-      this.state.start('Game');
+      this.state.start('MainMenu');
     }
   },
 };
