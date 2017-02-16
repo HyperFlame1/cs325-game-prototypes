@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Phaser Basic Project Template</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<script src="js/GameOver.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Your game title</h2>
+<ul>
+
+<li><strong>High Concept:</strong>
+Shoot the asteroids heading toward Earth to get the highest score!
+</li>
+
+<li><strong>Theme:</strong>
+I used both themes: Cowboy and Meteor heading toward Earth (these are asteroids though).
+</li>
+
+<li><strong>Mandated Variety:</strong>
+The input is the mouse pointer, left clicking, the R key and the spacebar. The number of asteroids that spawn is determined by RNG; every update, a number is generated between 1 and 100, and if that number is greater than 97, it spawns an asteroid. Playstyle is simply a reactionary based game.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+Players should feel like they're competing for a high score and also stressed out whenever there are a large number of asteroids onscreen at once. They should also feel skillful when they destroy more than one asteroid in one shot.
+</li>
+
+<li><strong>Gameplay:</strong>
+Players begin gameplay by clicking on the McCree icon at the bottom of the title screen. Then, it loads up the game. Players destroy incoming asteroids by left clicking when the circular crosshair is being overlapped by an asteroid. This uses 1 shot. The player is limited to shooting 6 shots before they are forced to reload. Players reload by pressing R. Attempting to shoot when you no longer have any ammo will result in a "clicking" sound. When two or more asteroids are over the crosshairs, they can all be destroyed with one shot. Destroying an asteroid gives 1 point. If a single asteroid touches the Earth, it's game over. Players can restart the game at the game over screen by pressing the spacebar.
+</li>
+
+<li><strong>Prototype Goal:</strong>
+This prototype is evaluating an endless-wave mechanic revolving around skillful mouse movement and reaction time, as well as having to keep track of ammo.
+</li>
+
+<li><strong>Features:</strong>
+The sound design, while borrowed almost entirely from Overwatch, is very responsive and gives the player information without having to look at the ammo counter. Therefore, turning up the volume is a key part of the game.
+</li>
+
+<li><strong>Setting/Premise:</strong>
+A huge storm of Moon sized asteroids are heading straight for the Earth! With the power of future technology, the Overwatch team has managed to make McCree planet-sized! It's up to the future cowboy to snipe the asteroids out of space before they crash into and destroy the Earth.
+</li>
+
+<li><strong>Story:</strong>
+The setting is pretty ridiculous and isn't meant to be taken seriously. The setting is about as deep as the lore gets. Space cowboy saves the Earth from giant space rocks!
+</li>
+
+<li><strong>Target Audience:</strong>
+People who like Overwatch and/or like endless-wave and endless-score based games.
+</li>
+
+<li><strong>Play Time:</strong>
+Ranges anywhere from 5 seconds to infinity, however long someone can last.
+</li>
+
+<li><strong>Strategies:</strong>
+Since the asteroids all head for the center of the Earth sprite, it is wise to wait until the asteroids bunch up so that you can take out many at once with a single shot. Reloading when there aren't many asteroids on screen is also a good strategy.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+<ul>
+<li>Loading screen: self-made</li>
+<li>Title Screen Background: self-made</li>
+<li>McCree Icon Image and Pixel Art McCree: Blizzard Entertainment <a href="http://overwatch.gamepedia.com/McCree">Overwatch Wiki</a></li>
+<li>Asteroids: <a href="http://piq.codeus.net/static/media/userpics/piq_403681_400x400.png">image link</a></li>
+<li>Earth from Reddit: <a href="https://i.redd.it/med6izsf789y.png">image link</a></li>
+<li>Crosshair: self-made (based on an Overwatch crosshair)</li>
+<li>McCree SFX: Blizzard Entertainment <a href="http://overwatch.gamepedia.com/McCree">Overwatch Wiki</a></li>
+<li>Music from Overwatch by Blizzard Entertainment - "Rally the Heroes", "Overtime", "Competitive Loading"</li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+I borrowed code from the gamestate template included in the original repository. I can't really think of a specific game that it's closest to but it's very similar to most endless waves of enemies games.
+</li>
+
+</ul>
+</div>
+</body>
+</html>
