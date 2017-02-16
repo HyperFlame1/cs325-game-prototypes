@@ -73,6 +73,8 @@ BasicGame.MainMenu.prototype = {
 		this.mario.body.enable = true;
 		this.mario.body.velocity.x = 90;
 
+		this.jumped = false;
+
 	},
 
 	update: function () {
@@ -84,7 +86,7 @@ BasicGame.MainMenu.prototype = {
 			this.game.physics.arcade.collide(this.mario, this.ground);
 		}
 
-		if ((this.goomba1.x - this.mario.x) < 25 && this.jumped != true)
+		if ((this.goomba1.x - this.mario.x) < 25 && this.jumped == false)
 		{
 			this.mario.animations.stop();
 			this.mario.animations.play('jumping');
