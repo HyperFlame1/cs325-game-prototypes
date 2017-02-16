@@ -12,8 +12,8 @@ BasicGame.Preloader.prototype = {
 
 	preload: function () {
 
-		this.preloadBar = this.add.sprite(800, 400, 'preloaderBar');
-    this.loadingText = this.add.sprite(800, 400, 'loadingText');
+		this.preloadBar = this.add.sprite(256, 256, 'preloaderBar');
+    this.loadingText = this.add.sprite(256, 256, 'loadingText');
     this.preloadBar.anchor.setTo(0.5);
     this.loadingText.anchor.setTo(0.5);
 
@@ -30,7 +30,7 @@ BasicGame.Preloader.prototype = {
 		this.load.image('standingGoombaLeft', 'assets/standingGoombaLeft.png');
 		this.load.image('ground', 'assets/ground.png');
 		this.load.image('background', 'assets/background.png');
-		this.load.audio('titleMusic', 'assets/titleMusic.mp3');
+		this.load.audio('titleMusic', 'assets/titleMusic.wav');
 		this.load.audio('stageMusic', 'assets/stageMusic.mp3');
 	},
 

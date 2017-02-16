@@ -8,6 +8,7 @@ BasicGame.MainMenu = function (game) {
 	this.goomba1 = null;
 	this.goomba2 = null;
 	this.mario = null;
+	
 };
 
 BasicGame.MainMenu.prototype = {
@@ -15,7 +16,7 @@ BasicGame.MainMenu.prototype = {
 	create: function () {
 
 		this.music = this.add.audio('titleMusic');
-		this.music.play();
+		this.music.loopFull();
 
 		this.background = this.add.tileSprite(0, 0, 'background');
 		this.ground = this.add.tileSprite(0, 0, 'ground');

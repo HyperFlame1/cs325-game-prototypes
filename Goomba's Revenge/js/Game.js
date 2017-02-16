@@ -61,36 +61,8 @@ BasicGame.Game.prototype = {
 
     create: function () {
       this.game.physics.startSystem(Phaser.Physics.ARCADE);
-      this.music = this.add.audio('gameMusic');
+      this.music = this.add.audio('stageMusic');
       this.music.loopFull();
-      this.background = this.add.sprite(0, 0, 'titlePage');
-      this.crosshair = this.add.sprite(this.game.input.mousePointer.x, this.game.input.mousePointer.y, 'crosshair'); //this.game.input.mousePointer.x, this.game.input.mousePointer.y,
-      this.crosshair.anchor.setTo(0.5);
-      this.game.physics.arcade.enableBody(this.crosshair);
-      this.defendText = this.add.sprite(800, 50, 'defendText');
-      this.defendText.anchor.setTo(0.5);
-      this.defendText.scale.setTo(1.2);
-      this.game.add.tween(this.defendText).to({alpha: 0}, 3000, Phaser.Easing.Linear.None, true, 2000, 0, false);
-      this.mccree = this.add.sprite(200, 290, 'mccree');
-      this.mccree.anchor.setTo(0.5, 1);
-      this.mccree.scale.setTo(0.3);
-      this.earth = this.add.sprite(200, 450, 'earth');
-      this.earth.anchor.setTo(0.5);
-      this.earth.scale.setTo(0.8);
-      this.game.physics.arcade.enableBody(this.earth);
-      this.game.input.mouse.capture = true;
-      this.asteroids = this.game.add.group();
-      this.asteroids.enableBody = true;
-      this.asteroids.physicsBodyType = Phaser.Physics.ARCADE;
-      this.ammo = 6;
-      this.score = 0;
-      this.gunshot = this.add.audio('gunshot');
-      this.empty = this.add.audio('empty');
-      this.reload = this.add.audio('reload');
-      this.losing = this.add.audio('losing');
-      this.rKey = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
-      this.scoreText = this.game.add.text(100, 50, 'Score: 0', { fontSize: '32px', fill: '#FFF'});
-      this.ammoText = this.game.add.text(100, 700, 'Ammo: 6', { fontSize: '32px', fill: '#FFF'});
     },
 
     update: function () {
