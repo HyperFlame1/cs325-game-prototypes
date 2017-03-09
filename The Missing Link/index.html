@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>The Missing Link</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>The Missing Link</h2>
+<ul>
+
+<li>For this assignment, I iterated on my pass (I made a new game) on the 3rd assignment, which included "invisibility" as a theme.
+
+<li><strong>High Concept:</strong>
+Two players fight as mirror images of Link, with a twist: both of them turn invisible!
+</li>
+
+<li><strong>Theme:</strong>
+From the 3rd assignment: Invisibility.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+<ul>
+<li>Input: Keyboard</li>
+<li>Randomness: Deterministic</li>
+<li>Play Style: Competitor</li>
+<li>Genre: Overhead, Fighting</li>
+</ul>
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+Players should feel anxious when both they and their opponent are invisible; you don't know where your opponent is, and they don't know where you are. You might not even know where you are, yourself!
+When players win a round, they should feel like out-witted their opponent or simply overwhelmed them by chasing them down.
+Players should feel afraid to randomly swing out in the open in fear of exposing themselves to the enemy, but should also feel that it's a useful tool for reorienting yourself.
+</li>
+
+<li><strong>Gameplay:</strong>
+<ul>
+<li>CONTROLS:</li>
+<li>Green Link: WASD for movement, F to attack</li>
+<li>Blue Link: Arrow Keys for movement, L to attack</li>
+</ul>
+
+This game consists of one hit KOs; get hit once and you lose!
+There are two Links: Green and Blue. When a round begins, the Links spawn on opposite corners of the map.
+Players can immediately control their respective Link right from the beginning.
+After a brief delay, both Links fade to complete invisibility.
+Since players share the same game screen, you know as much as your opponent does!
+Attack with F or L to swing your sword. This will attack in a small area in front of Link. If you hit the opponent Link, you win.
+However, swinging your sword causes you to become visible for a brief period; you reveal your location!
+Bumping into walls will also cause you to become visible.
+If both Links bump into eachother, they both become visible.
+When you are completely opaque, you cannot swing your sword. This means that when you swing your sword, there's a small cooldown on swinging again.
+When you bump into walls or the other Link, you also cannot swing your sword for a short period.
+If you and your opponent swing at the same time, your swords will clang and both of you will be knocked back a small distance.
+
+</li>
+
+<li><strong>Prototype Goal:</strong>
+This game is evaluating the mechanic of invisibility in a multiplayer environment. It also tests the mehcanics of basic Zelda swordplay in a multiplayer environment, but this has been well established.
+</li>
+
+<li><strong>Features:</strong>
+You're invisible to your opponent and yourself! Having to track your invisible self is pretty unique.
+</li>
+
+<li><strong>Setting/Premise:</strong>
+This is set in the world of The Legend of Zelda: A Link to the Past.
+</li>
+
+<li><strong>Story:</strong>
+Since The Legend of Zelda is already a well-established franchise, there isn't much to say here. However, if Link were fighting Dark Link, it would be good
+for a multiplayer component of a future Zelda title.
+</li>
+
+<li><strong>Target Audience:</strong>
+Fans of the Legend of Zelda and competitive muliplayer games should feel right at home.
+</li>
+
+<li><strong>Play Time:</strong>
+A single round can last anywhere from 5 seconds to several minutes. Theoretically it could go on forever.
+</li>
+
+<li><strong>Strategies:</strong>
+Get a good feel for how fast Link moves; this is key to keeping yourself oriented.
+Sitting in a corner and holding the attack button might seem strong, but can be easily countered.
+Baiting your opponent by revealing yourself, and then misleading the direction you run in, and then sneaking up behind them is a very good strategy.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+<li>The Legend of Zelda: A Link to the Past sprites belong to Nintendo, retrieved from <a href="https://www.spriters-resource.com/snes/legendofzeldaalinktothepast/">The Spriters Resource</a></li>
+<li>The Legend of Zelda: A Link to the Past sound effects belong to Nintendo, retrieved from <a href="http://noproblo.dayjo.org/ZeldaSounds/">Zelda Sounds</a></li>
+<li>The Legend of Zelda: A Link to the Past music belongs to Nintendo, retrieved from <a href="http://zeldauniverse.net/media/music/a-link-to-the-past-original-soundtrack/">Zelda Universe</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+<ul>
+<li>The Legend of Zelda: A Link to the Past</li>
+</ul>
+</li>
+
+</ul>
+</div>
+</body>
+</html>
