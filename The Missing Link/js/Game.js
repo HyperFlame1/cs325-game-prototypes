@@ -76,8 +76,8 @@ GameStates.makeGame = function( game, shared ) {
       blueVisible.stop();
       greenLink.alpha = 1;
       blueLink.alpha = 1;
-      greenVisible = game.add.tween(greenLink).to({alpha: 0}, 800, Phaser.Easing.Linear.None, true, 500, 0, false);
-      blueVisible = game.add.tween(blueLink).to({alpha: 0}, 800, Phaser.Easing.Linear.None, true, 500, 0, false);
+      greenVisible = game.add.tween(greenLink).to({alpha: 0}, 800, Phaser.Easing.Linear.None, true, 0, 0, false);
+      blueVisible = game.add.tween(blueLink).to({alpha: 0}, 800, Phaser.Easing.Linear.None, true, 0, 0, false);
     }
 
     function greenSwing()
