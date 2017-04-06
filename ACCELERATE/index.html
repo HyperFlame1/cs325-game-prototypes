@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>ACCELERATE</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>ACCELERATE: Rescue Squad</h2>
+This is an iteration of last week's analog assignment.
+<ul>
+<li><strong>High Concept:</strong>
+You are driving an ambulance: race to the car accident before it’s too late!
+</li>
+
+<li><strong>Theme:</strong>
+Car Accident
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+Players should feel pressured by the time constraint; they should feel that they need to go as fast as possible to win.
+They should feel skillful when they narrowly avoid crashing into a car.
+</li>
+
+<li><strong>Gameplay:</strong>
+Controls: ARROW KEYS
+<p>Press LEFT or RIGHT to switch lanes.</p>
+<p>Press UP to accelerate.</p>
+<p>Press DOWN to brake.</p>
+You must get to the scene car accident before the timer ends, hurry! Be careful not to cause your own car accident.
+</li>
+
+<li><strong>Prototype Goal:</strong>
+This game is evaluating a classic top-down racer.
+</li>
+
+<li><strong>Features:</strong>
+Generally, games like these are about surviving as long as possible and achieving the highest score, but this game has the player race against the clock.
+</li>
+
+<li><strong>Setting/Premise:</strong>
+It's just a normal day.
+</li>
+
+<li><strong>Story:</strong>
+A car accident has just occured on the highway! The ACCELERATE Rescue Squad is here to help. If ACCELERATE doesn't make it in time, people will die. Speed your way to
+the scene of the accident!
+</li>
+
+<li><strong>Target Audience:</strong>
+Fans of racing games and games that require quick reaction times should feel right at home.
+</li>
+
+<li><strong>Play Time:</strong>
+There is a 2 minute time limit to reach the accident, so gameplay should not last any longer than two minutes. It is very easy for the game to end before then, however,
+if the player crashes into another car.
+</li>
+
+<li><strong>Strategies:</strong>
+Get a good feel for how fast Link moves; this is key to keeping yourself oriented.
+Sitting in a corner and holding the attack button might seem strong, but can be easily countered.
+Baiting your opponent by revealing yourself, and then misleading the direction you run in, and then sneaking up behind them is a very good strategy.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+<ul>
+<li>Ambulance, retrieved from <a href="http://www.freepik.com/free-vector/cars-collection-in-top-view_795999.htm">Freepik</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+<ul>
+There are a great deal of differences between this digital prototype and the analog prototype from the previous week.
+While the game still includes random generation of cars as a major element, the game now relies on skill instead of a dice roll.
+The addition of a timer adds the pressure of time.
+</ul>
+</li>
+
+</ul>
+</div>
+</body>
+</html>
