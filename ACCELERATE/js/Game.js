@@ -127,7 +127,7 @@ GameStates.makeGame = function( game, shared ) {
 
           speed = 5;
           position = 50;
-          distance = 50000;
+          distance = 60000;
 
           distanceText = game.add.text(50, 40, "Distance: \n 80000", {
             font: "14px Courier",
