@@ -275,10 +275,10 @@ GameStates.makeGame = function (game, shared){
           {
             canBoost = true;
           }
-
-          boostTimer -= 1;
-
-          console.log(boostTimer);
+          else
+          {
+            boostTimer -= 1;
+          }
 
           if ((blueCar.y > 750 && blueCar.y < 770) || (redCar.y > 750 && redCar.y < 770) || (greenCar.y > 750 && greenCar.y < 770) ||
           (yellowCar.y > 750 && yellowCar.y < 770) || (orangeCar.y > 750 && orangeCar.y < 770))
