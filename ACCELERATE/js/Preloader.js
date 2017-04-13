@@ -10,6 +10,8 @@ GameStates.makePreloader = function( game ) {
 				{
 					game.load.audio('titleMusic', 'assets/titleMusic.wav');
 					game.load.audio('gameMusic', 'assets/gameMusic.wav');
+					game.load.audio('siren', 'assets/siren.mp3');
+					game.load.audio('carHorn', 'assets/car_doppler.mp3');
 					game.load.atlas('playButton', 'assets/playButton.png', 'assets/playButton.json', Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
 					game.load.image('road', 'assets/road.png');
 					game.load.image('ambulance', 'assets/ambulance.png');
@@ -22,7 +24,7 @@ GameStates.makePreloader = function( game ) {
 
         create: function ()
 				{
-
+					
         },
 
         update: function ()

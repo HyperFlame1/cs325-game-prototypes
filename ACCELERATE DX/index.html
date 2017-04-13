@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>ACCELERATE DX</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<script src="js/GameOver.js"></script>
+	<script src="js/Win.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>ACCELERATE DX</h2>
+This is an iteration of last week's assignment, ACCELERATE.
+<ul>
+<li><strong>High Concept:</strong>
+You are driving an ambulance: race to the car accident before it’s too late!
+</li>
+
+<li><strong>Theme:</strong>
+Car Accident
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+Players should feel pressured by the time constraint; they should feel that they need to go as fast as possible to win.
+They should feel skillful when they narrowly avoid crashing into a car.
+</li>
+
+<li><strong>Gameplay:</strong>
+Controls: ARROW KEYS
+<p>Press LEFT or RIGHT to switch lanes.</p>
+<p>Press UP to accelerate.</p>
+<p>Press DOWN to brake.</p>
+<p>Press SHIFT to boost. This will greatly increase the speed of the ambulance, and has about a 10 second cooldown.</p>
+You must get to the scene of the car accident before the timer ends.
+If you crash into another car, you lose.
+If the distance hits 0, you win!
+</li>
+
+<li><strong>Prototype Goal:</strong>
+This game is evaluating a classic lane-avoidance game with the additional pressure of time.
+</li>
+
+<li><strong>Features:</strong>
+Generally, games like these are about surviving as long as possible and achieving the highest score, but this game has the player race against the clock.
+</li>
+
+<li><strong>Setting/Premise:</strong>
+The ACCELERATE Rescue Squad is a highly trained team that speeds through traffic.
+</li>
+
+<li><strong>Story:</strong>
+A car accident has just occured on the highway! The ACCELERATE Rescue Squad is here to help. If the ambulance doesn't make it in time, people will die. Speed your way to
+the scene of the accident!
+</li>
+
+<li><strong>Target Audience:</strong>
+Fans of racing games and games that require quick reaction times should feel right at home.
+</li>
+
+<li><strong>Play Time:</strong>
+There is a 1 minute and 30 second time limit to reach the accident, so gameplay should not last any longer than that. It is very easy for the game to end before then, however,
+if the player crashes into another car.
+</li>
+
+<li><strong>Strategies:</strong>
+Generally, players will want to hold up for the entire game. However, there may be situations where braking is necessary, such as having to cross three lanes to avoid cars. Braking for
+too long will cause you to not make it in time, so use the brake sparingly. If you're skilled enough, using boost as soon as it becomes available can get you to the destination much quicker.
+Braking, then using the boost to instantly accelerate is useful for navigating around walls of cars without losing too much time.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+<ul>
+<li>Cars retrieved from <a href="http://www.freepik.com/free-vector/cars-collection-in-top-view_795999.htm">Freepik</a></li>
+<li>Song: Super Monkey Ball 2: Expert Race retrieved from <a href="https://www.youtube.com/watch?v=RS0vudpnwnc">Youtube</a></li>
+<li>Doppler Car Horn obtained from <a href="https://www.youtube.com/watch?v=a3RfULw7aAY">Youtube</a></li>
+<li>Ambulance Siren obtained from <a href="https://www.youtube.com/watch?v=8hCp5DZ5nXs">Youtube</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+<ul>
+There are many aesthetic changes from the previous digital prototype. There is now a loading screen. Instead of restarting the game immediately, there are now Game Over and Win screens, where you can restart by hitting the spacebar.
+The Game Over screen will display the furthest distance reached. The ambulance now has a siren sound effect, and cars will honk with a realistic doppler sound effect as you speed by them.
+There is also a new boost mechanic. Pressing shift will temporarily speed up the ambulance, but it has a cooldown. This is useful for instantly hitting max speed after braking.
+The collision box of the ambulance was changed to feel more fair. In the previous iteration it would look like the ambulance had cleared a car but you would lose. Now the collision box is a bit smaller.
+Braking is also much faster, so you can navigate around blocks of cars more easily.
+</ul>
+</li>
+
+</ul>
+</div>
+</body>
+</html>
